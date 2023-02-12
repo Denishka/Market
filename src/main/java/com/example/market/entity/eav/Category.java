@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +24,12 @@ public class Category implements Serializable { //Entity
     private String name;
     @Column(name = "parent_id")
     private UUID parentId;
+
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    private List<Product> products;
+
+    @OneToMany
+    private List<AttributeGroup> groups;
 
 
 }

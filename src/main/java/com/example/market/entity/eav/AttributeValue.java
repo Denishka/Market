@@ -19,4 +19,13 @@ public class AttributeValue implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    private Product product;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    private Characteristic characteristic;
+
 }

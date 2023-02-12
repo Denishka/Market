@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,4 +20,11 @@ public class Characteristic implements Serializable { // Attribute, В данн�
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+
+
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    private List<AttributeValue> values;
+
+
 }
