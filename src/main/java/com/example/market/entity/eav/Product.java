@@ -1,5 +1,6 @@
 package com.example.market.entity.eav;
 
+import com.example.market.entity.Order;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,6 +29,8 @@ public class Product implements Serializable { //Entity
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private List<AttributeValue> values;
 
+    @ManyToOne
+    private Order order;
 
 
 }
