@@ -23,10 +23,10 @@ public class Order implements Serializable {
     private UUID id;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private  User user;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private List<Product> products;
 
 

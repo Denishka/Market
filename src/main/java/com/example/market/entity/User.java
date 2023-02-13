@@ -22,6 +22,6 @@ public class User implements Serializable {
     private UUID id;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private List<Order> orders;
 }
