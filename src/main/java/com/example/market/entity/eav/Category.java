@@ -25,7 +25,7 @@ public class Category implements Serializable { //Entity
     @Column(name = "parent_id")
     private UUID parentId;
 
-    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private List<Product> products;
 
     @OneToMany
