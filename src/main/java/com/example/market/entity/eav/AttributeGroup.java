@@ -20,7 +20,6 @@ public class AttributeGroup implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-
     @ManyToOne
     private Category category;
 }

@@ -19,4 +19,11 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+
+    @ManyToOne
+    private  User user;
+
+
+
 }
