@@ -29,8 +29,10 @@ public class Product implements Serializable { //Entity
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private List<AttributeValue> values;
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    private Order order;
+
+    //что-то не логичное
+//    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+//    private Order order;
 
 
 }
